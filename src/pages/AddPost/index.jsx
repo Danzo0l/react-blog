@@ -48,7 +48,7 @@ export const AddPost = () => {
       setIsLoading(true);
       const fields = {
         title,
-        imageUrl: imageUrl ? `https://express-blog-danzo0l.herokuapp.com/${imageUrl}` : '',
+        imageUrl: imageUrl ? `https://express-blog-danzo0l.herokuapp.com${imageUrl}` : '',
         tags,
         text: value,
       }
