@@ -34,7 +34,7 @@ export const AddPost = () => {
       const { data } = await axios.post('/upload', formData);
       setImageUrl(data.url);
     } catch (err) {
-      console.warn(err);
+      console.warn(err.response.data);
       alert(err);
     }
   };
@@ -116,7 +116,7 @@ export const AddPost = () => {
           <Button variant="contained" color="error" onClick={onClickRemoveImage}>
           Удалить
           </Button>
-          <img className={styles.image} src={`https://express-blog-danzo0l.herokuapp.com/${imageUrl}`} alt="Uploaded" />
+          <img className={styles.image} src={`https://express-blog-danzo0l.herokuapp.com${imageUrl}`} alt="Uploaded" />
         </>
       )}
       <br />
