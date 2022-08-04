@@ -1,8 +1,9 @@
 import axios from "axios";
+import { urlsConfig } from "./urlsConfig";
 
 
 const instance = axios.create({
-    baseURL: 'https://express-blog-danzo0l.herokuapp.com/',
+    baseURL: `${urlsConfig}/`,
 })
 
 

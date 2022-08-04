@@ -12,6 +12,7 @@ import axios from '../../axios';
 import { useNavigate, Navigate, useParams } from 'react-router-dom';
 import { useRef } from 'react'; 
 import { useState } from 'react';
+import { urlsConfig } from '../../urlsConfig';
 
 export const AddPost = () => {
   const {id} = useParams();
@@ -48,7 +49,7 @@ export const AddPost = () => {
       setIsLoading(true);
       const fields = {
         title,
-        imageUrl: imageUrl ? `https://express-blog-danzo0l.herokuapp.com${imageUrl}` : '',
+        imageUrl: imageUrl ? `${urlsConfig}${imageUrl}` : '',
         tags,
         text: value,
       }
@@ -116,7 +117,7 @@ export const AddPost = () => {
           <Button variant="contained" color="error" onClick={onClickRemoveImage}>
           Удалить
           </Button>
-          <img className={styles.image} src={`https://express-blog-danzo0l.herokuapp.com${imageUrl}`} alt="Uploaded" />
+          <img className={styles.image} src={`${urlsConfig}${imageUrl}`} alt="Uploaded" />
         </>
       )}
       <br />
