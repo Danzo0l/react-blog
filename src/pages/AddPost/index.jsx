@@ -48,7 +48,7 @@ export const AddPost = () => {
       setIsLoading(true);
       const fields = {
         title,
-        imageUrl: imageUrl ? `http://localhost:8000${imageUrl}` : '',
+        imageUrl: imageUrl ? `https://express-blog-danzo0l.herokuapp.com/${imageUrl}` : '',
         tags,
         text: value,
       }
@@ -116,7 +116,7 @@ export const AddPost = () => {
           <Button variant="contained" color="error" onClick={onClickRemoveImage}>
           Удалить
           </Button>
-          <img className={styles.image} src={`http://localhost:8000${imageUrl}`} alt="Uploaded" />
+          <img className={styles.image} src={`https://express-blog-danzo0l.herokuapp.com/${imageUrl}`} alt="Uploaded" />
         </>
       )}
       <br />
