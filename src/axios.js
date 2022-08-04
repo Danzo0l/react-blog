@@ -3,7 +3,7 @@ import { urlsConfig } from "./urlsConfig";
 
 
 const instance = axios.create({
-    baseURL: `${urlsConfig}/`,
+    baseURL: `${urlsConfig.server_url}/`,
 })
 
 

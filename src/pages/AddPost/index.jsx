@@ -49,7 +49,7 @@ export const AddPost = () => {
       setIsLoading(true);
       const fields = {
         title,
-        imageUrl: imageUrl ? `${urlsConfig}${imageUrl}` : '',
+        imageUrl: imageUrl ? `${urlsConfig.server_url}${imageUrl}` : '',
         tags,
         text: value,
       }
@@ -117,7 +117,7 @@ export const AddPost = () => {
           <Button variant="contained" color="error" onClick={onClickRemoveImage}>
           Удалить
           </Button>
-          <img className={styles.image} src={`${urlsConfig}${imageUrl}`} alt="Uploaded" />
+          <img className={styles.image} src={`${urlsConfig.server_url}${imageUrl}`} alt="Uploaded" />
         </>
       )}
       <br />
