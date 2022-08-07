@@ -49,7 +49,7 @@ export const AddPost = () => {
       setIsLoading(true);
       const fields = {
         title,
-        imageUrl: imageUrl ? `${urlsConfig.server_url}${imageUrl}` : '',
+        imageUrl: imageUrl ? `${imageUrl}` : '',
         tags,
         text: value,
       }
