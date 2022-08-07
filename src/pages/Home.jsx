@@ -10,6 +10,8 @@ import { Post } from '../components/Post';
 import { TagsBlock } from '../components/TagsBlock';
 import { CommentsBlock } from '../components/CommentsBlock';
 import { fetchPosts, fetchTags } from '../redux/slices/posts';
+import { urlsConfig } from '../urlsConfig';
+
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -42,7 +44,7 @@ export const Home = () => {
               <Post
                 id={obj._id}
                 title={obj.title}
-                imageUrl={urlsConfig.server_url + obj.imageUrl}
+                imageUrl={obj.imageUrl ? urlsConfig.server_url + obj.imageUrl : ''}
                 user={obj.user}
                 createdAt={obj.createdAt}
                 viewsCount={obj.viewsCount}

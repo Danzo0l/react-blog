@@ -7,6 +7,8 @@ import { Post } from "../components/Post";
 import { Index } from "../components/AddComment";
 import { CommentsBlock } from "../components/CommentsBlock";
 import ReactMarkdown from "react-markdown";
+import { urlsConfig } from '../urlsConfig';
+
 
 export const FullPost = () => {
   const [data, setData] = useState();
@@ -34,7 +36,7 @@ export const FullPost = () => {
       <Post
         id={data._id}
         title={data.title}
-        imageUrl={urlsConfig.server_url + data.imageUrl}
+        imageUrl={data.imageUrl ? urlsConfig.server_url + data.imageUrl : ''}
         user={data.user}
         createdAt={data.createdAt}
         viewsCount={data.viewsCount}
