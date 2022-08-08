@@ -27,6 +27,8 @@ export const AddPost = () => {
 
   const isEditing = Boolean(id);
 
+  const userData = useSelector((state) => state.auth.data)._id;
+
   const handleChangeFile = async (event) => {
     try {
       const formData = new FormData();
@@ -35,7 +37,7 @@ export const AddPost = () => {
       const { data } = await axios.post('/upload', formData);
       setImageUrl(data.url);
     } catch (err) {
-      console.warn(err.response.data);
+        console.warn(err.response.data);
       alert(err);
     }
   };

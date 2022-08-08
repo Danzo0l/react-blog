@@ -9,6 +9,7 @@ import axios from '../axios';
 import { Post } from '../components/Post';
 import { TagsBlock } from '../components/TagsBlock';
 import { CommentsBlock } from '../components/CommentsBlock';
+import { UserInfo } from '../components/UserInfo';
 import { fetchPosts, fetchTags } from '../redux/slices/posts';
 import { urlsConfig } from '../urlsConfig';
 
@@ -56,7 +57,8 @@ export const Home = () => {
           )}
         </Grid>
         <Grid xs={4} item>
-          <TagsBlock items={tags.items} isLoading={isTagsLoading} />1
+          <TagsBlock items={tags.items} isLoading={isTagsLoading} />
+          <UserInfo avatarUrl='' fullName='sdfsdfsdfsfsdfs' additionalText='sdfsdfsdf'/>
           <CommentsBlock
             items={[
               {
