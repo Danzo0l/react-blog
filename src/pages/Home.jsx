@@ -7,8 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from '../axios';
 
 import { Post } from '../components/Post';
-import { TagsBlock } from '../components/TagsBlock';
-import { CommentsBlock } from '../components/CommentsBlock';
+// import { TagsBlock } from '../components/TagsBlock';
+//import { CommentsBlock } from '../components/CommentsBlock';
 import { UserInfo } from '../components/UserInfo';
 import { fetchPosts, fetchTags } from '../redux/slices/posts';
 import { urlsConfig } from '../urlsConfig';
@@ -37,7 +37,7 @@ export const Home = () => {
         <Tab label="Популярные" />
       </Tabs>
       <Grid container spacing={4}>
-        <Grid xs={8} item>
+        <Grid xs={19} item>
           {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) => 
             isPostsLoading ? (
               <Post isLoading={true} key={index} />
@@ -49,7 +49,6 @@ export const Home = () => {
                 user={obj.user}
                 createdAt={obj.createdAt}
                 viewsCount={obj.viewsCount}
-                commentsCount={3}
                 tags={obj.tags}
                 isEditable={userData?._id === obj.user._id}
               />
@@ -57,9 +56,8 @@ export const Home = () => {
           )}
         </Grid>
         <Grid xs={4} item>
-          <TagsBlock items={tags.items} isLoading={isTagsLoading} />
-          <UserInfo avatarUrl='' fullName='sdfsdfsdfsfsdfs' additionalText='sdfsdfsdf'/>
-          <CommentsBlock
+          {/* <TagsBlock items={tags.items} isLoading={isTagsLoading} /> */}
+          {/* <CommentsBlock
             items={[
               {
                 user: {
@@ -68,16 +66,9 @@ export const Home = () => {
                 },
                 text: 'Это тестовый комментарий',
               },
-              {
-                user: {
-                  fullName: 'Иван Иванов',
-                  avatarUrl: 'https://mui.com/static/images/avatar/2.jpg',
-                },
-                text: 'When displaying three lines or more, the avatar is not aligned at the top. You should set the prop to align the avatar at the top',
-              },
             ]}
             isLoading={false}
-          />
+          /> */}
         </Grid>
       </Grid>
     </>
